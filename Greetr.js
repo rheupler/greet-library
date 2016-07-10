@@ -24,7 +24,7 @@
     Greetr.prototype = {
 
       fullName: function() {
-        return this.fullName + ' ' + this.lastName;
+        return this.firstName + ' ' + this.lastName;
       },
 
       validate: function() {
@@ -85,8 +85,14 @@
 
         var msg;
         if (formal) {
-          msg = this.formalGreeting
+          msg = this.formalGreeting();
         }
+        else {
+          msg = this.greeting();
+        }
+        $(selector).html(msg);
+
+        return this;
       }
 
     };
